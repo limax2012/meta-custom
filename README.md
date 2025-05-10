@@ -1,4 +1,4 @@
-# meta-custom Yocto layer
+# meta-custom
 
 This repository contains the `meta-custom` Yocto layer.
 
