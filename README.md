@@ -20,7 +20,7 @@ This layer depends on the following layers (kirkstone branch):
 bitbake-layers add-layer meta-custom
 ```
 
-## Description
+## 2. Description
 
 The `meta-custom` layer provides the following customizations for a minimal Raspberry Pi Zero 2 W image:
 
