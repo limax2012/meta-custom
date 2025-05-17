@@ -9,18 +9,13 @@ This layer depends on the following layers (kirkstone branch):
 - [poky](https://github.com/yoctoproject/poky)
 - [meta-raspberrypi](https://github.com/agherzan/meta-raspberrypi)
 
-## Table of Contents
-
-1. Adding the `meta-custom` layer to your build
-2. Description
-
-## 1. Adding the meta-custom layer to your build
+## Adding the meta-custom layer to your build
 
 1. `bitbake-layers add-layer meta-custom`
 
 2. Add the path to `meta-custom` to build/conf/bblayers.conf
 
-## 2. Description
+## Description
 
 The `meta-custom` layer provides the following customizations for a minimal Raspberry Pi Zero 2 W image:
 
