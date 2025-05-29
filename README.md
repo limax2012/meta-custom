@@ -23,5 +23,6 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
 - Enable I2C and SPI along with corresponding device drivers
 - Add modules to image: `i2c-tools`, Broadcom Wi-Fi, and Wi-Fi utilities
 - Add I2C test application (get temperature from BMP280) to /usr/bin
+- Add SPI test application (loopback) to /usr/bin
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`
