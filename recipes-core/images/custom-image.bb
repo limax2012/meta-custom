@@ -19,6 +19,8 @@ EXTRA_USERS_PARAMS = "\
 "
 
 IMAGE_INSTALL += "get-temp"
+IMAGE_INSTALL += "spi-loopback-test"
+IMAGE_INSTALL += "spi-receive-test"
 
 IMAGE_INSTALL += "\
   i2c-tools \
