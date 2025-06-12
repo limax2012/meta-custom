@@ -7,6 +7,7 @@ This repository contains the `meta-custom` Yocto layer.
 This layer depends on the following layers (kirkstone branch):
 
 - [poky](https://github.com/yoctoproject/poky)
+- [meta-oe](https://github.com/openembedded/meta-openembedded/tree/kirkstone/meta-oe)
 - [meta-raspberrypi](https://github.com/agherzan/meta-raspberrypi)
 
 ## Adding the meta-custom layer to your build
