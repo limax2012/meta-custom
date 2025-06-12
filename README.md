@@ -21,10 +21,11 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
 
 - Enable UART with console access
 - Enable I2C and SPI along with corresponding device drivers
-- Add modules to image: `i2c-tools`, Broadcom Wi-Fi, and Wi-Fi utilities
+- Add modules to image: `libgpiod`, `i2c-tools`, Broadcom Wi-Fi, and Wi-Fi utilities
 - Add test applications to /usr/bin:  
-  - Get temperature from BMP280 via
+  - Get temperature from BMP280 via I2C
   - SPI loopback test
   - Receive 4 bytes from STM32 via SPI
+  - GPIO25 blink test
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`

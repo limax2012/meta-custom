@@ -21,8 +21,11 @@ EXTRA_USERS_PARAMS = "\
 IMAGE_INSTALL += "get-temp"
 IMAGE_INSTALL += "spi-loopback-test"
 IMAGE_INSTALL += "spi-receive-test"
+IMAGE_INSTALL += "gpio25-test"
 
 IMAGE_INSTALL += "\
+  libgpiod \
+  libgpiod-tools \
   i2c-tools \
   kernel-module-brcmfmac \
   linux-firmware-bcm43430 \
