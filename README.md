@@ -28,5 +28,6 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
   - SPI loopback test
   - Receive 4 bytes from STM32 via SPI
   - GPIO25 blink test and GPIO24 falling edge input test
+  - Receive and ack GPIO signal from STM32
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`
