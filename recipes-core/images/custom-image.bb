@@ -21,7 +21,8 @@ EXTRA_USERS_PARAMS = "\
 IMAGE_INSTALL += "get-temp"
 IMAGE_INSTALL += "spi-loopback-test"
 IMAGE_INSTALL += "spi-receive-test"
-IMAGE_INSTALL += "gpio25-test"
+IMAGE_INSTALL += "gpio-output-test"
+IMAGE_INSTALL += "gpio-input-test"
 
 IMAGE_INSTALL += "\
   libgpiod \

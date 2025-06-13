@@ -4,7 +4,7 @@
 
 #define GPIO_CHIP "/dev/gpiochip0"
 #define GPIO_LINE 25
-#define CONSUMER "gpio25-blinker"
+#define CONSUMER "gpio-blinker"
 
 int main(void) {
     struct gpiod_chip *chip;
@@ -35,6 +35,7 @@ int main(void) {
         gpiod_line_set_value(line, 1);
         sleep(1);
         gpiod_line_set_value(line, 0);
+        printf("Falling edge outputed by GPIO25\n");
         sleep(1);
     }
 

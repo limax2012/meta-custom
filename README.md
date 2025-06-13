@@ -27,6 +27,6 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
   - Get temperature from BMP280 via I2C
   - SPI loopback test
   - Receive 4 bytes from STM32 via SPI
-  - GPIO25 blink test
+  - GPIO25 blink test and GPIO24 falling edge input test
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`
