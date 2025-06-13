@@ -23,6 +23,7 @@ IMAGE_INSTALL += "spi-loopback-test"
 IMAGE_INSTALL += "spi-receive-test"
 IMAGE_INSTALL += "gpio-output-test"
 IMAGE_INSTALL += "gpio-input-test"
+IMAGE_INSTALL += "gpio-ack-test"
 
 IMAGE_INSTALL += "\
   libgpiod \
