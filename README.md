@@ -29,5 +29,6 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
   - Receive 4 bytes from STM32 via SPI
   - GPIO25 blink test and GPIO24 falling edge input test
   - Receive and ack GPIO signal from STM32
+- Add application that receives score and temperature from [STM32 flappy bird](https://github.com/limax2012/flappy-bird) via SPI
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`
