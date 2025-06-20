@@ -28,7 +28,7 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
   - Receive 4 bytes from STM32 via SPI
   - GPIO25 blink test and GPIO24 falling edge input test
   - Receive and ack GPIO signal from STM32
-- Add [STM32 Flappy Bird](https://github.com/limax2012/flappy-bird) comms application (spi_logger.c):
+- Add [STM32 Flappy Bird](https://github.com/limax2012/flappy-bird) comms application (`/usr/bin/spi_logger.c`):
   - Receives score and temperature via SPI
   - Sends data as an entry to Firebase
 - Set root filesystem partition size to ~200 MiB
