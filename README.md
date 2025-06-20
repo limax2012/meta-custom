@@ -32,21 +32,35 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`
 
-## Receiving and uploading data from [STM32 Flappy Bird](https://github.com/limax2012/flappy-bird)
+## Receiving and Uploading Data from [STM32 Flappy Bird](https://github.com/limax2012/flappy-bird)
 
-`/usr/bin/spi_logger` waits to receive score and temperature via SPI before uploading the data to Firebase.
+`/usr/bin/spi_logger` listens for score and temperature data over SPI and uploads it to Firebase.
 
-Setup for Wi-Fi/Firebase credentials and startup script:
-1. Create `/etc/firebase.conf` with the following format:
-```
-URL=https://flappy-bird-scores-default-rtdb.firebaseio.com/.json
-AUTH=your_firebase_database_secret_or_key
-```
-2. Configure Wi-Fi credentials:
-```
-wpa_passphrase "SSID" "password" >> /etc/wpa_supplicant.conf
-```
-3. Install the startup script:
-    1. Create `/etc/init.d/stm32_flappy_uploader` and paste the contents of [`stm32_flappy_uploader`](https://gist.github.com/limax2012/316031352eaaaa38f115e1450bfb2bf2)
-    2. Make it executable: `chmod +x stm32_flappy_uploader`
-    3. Register it to run at boot: `update-rc.d stm32_flappy_uploader defaults`
+### Hardware Connections
+
+- **Power**
+  - Pi gets power via USB
+  - Shares 3.3V and GND with STM32
+- **GPIO Pins**
+  - Input pin `GPIO24`: STM32 ready signal
+  - Output pin `GPIO25`: ACK signal to STM32
+- **SPI Bus**
+  - `MOSI`, `MISO`, `SCLK`, `CE0`: Connect Pi (SPI master) to STM32 (SPI slave)
+
+### Setup: Wi-Fi, Firebase, and Startup Script
+
+1. **Create `/etc/firebase.conf`:**
+     ```
+     URL=https://flappy-bird-scores-default-rtdb.firebaseio.com/.json
+     AUTH=your_firebase_database_secret_or_key
+     ```
+
+2. **Add credentials to `wpa_supplicant.conf`:**
+    ```
+    wpa_passphrase "SSID" "password" >> /etc/wpa_supplicant.conf
+    ```
+
+3. **Startup Script**
+   1. Create `/etc/init.d/stm32_flappy_uploader` and paste content from [gist](https://gist.github.com/limax2012/316031352eaaaa38f115e1450bfb2bf2)
+   2. Make it executable: `chmod +x /etc/init.d/stm32_flappy_uploader`
+   3. Enable on boot: `update-rc.d stm32_flappy_uploader defaults`
