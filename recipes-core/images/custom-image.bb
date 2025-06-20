@@ -24,7 +24,7 @@ IMAGE_INSTALL += "spi-receive-test"
 IMAGE_INSTALL += "gpio-output-test"
 IMAGE_INSTALL += "gpio-input-test"
 IMAGE_INSTALL += "gpio-ack-test"
-IMAGE_INSTALL += "spi-gpio-master"
+IMAGE_INSTALL += "spi-logger"
 
 IMAGE_INSTALL += "\
   libgpiod \
@@ -35,4 +35,6 @@ IMAGE_INSTALL += "\
   iw \
   wpa-supplicant \
   wireless-regdb-static \
+  curl \
+  ca-certificates \
 "
