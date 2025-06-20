@@ -35,12 +35,17 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
 
 `/usr/bin/spi_logger` waits to receive score and temperature via SPI before uploading the data to Firebase.
 
-Steps to enable Firebase score submission:
-1. Use `wpa_passphrase "SSID" "password" >> /etc/wpa_supplicant.conf` to set Wi-Fi details.
-2. Use `wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant.conf` and `udhcpc -i wlan0` to connect to Wi-Fi.
-3. Run `rdate -s time.nist.gov` to set the correct system time for TLS.
-4. Create `/etc/firebase.conf` with the following format:
+Setup for Wi-Fi/Firebase credentiald and startup script:
+1. Create `/etc/firebase.conf` with the following format:
 ```
 URL=https://flappy-bird-scores-default-rtdb.firebaseio.com/.json
 AUTH=your_firebase_database_secret_or_key
 ```
+2. Configure Wi-Fi credentials:
+```
+wpa_passphrase "SSID" "password" >> /etc/wpa_supplicant.conf
+```
+3. Install the startup script:
+    1. Create `/etc/init.d/stm32_flappy_uploader` and paste the contents of [`stm32_flappy_uploader`](https://gist.github.com/limax2012/316031352eaaaa38f115e1450bfb2bf2)
+    2. Make it executable: `chmod +x stm32_flappy_uploader`
+    3. Register it to run at boot: `update-rc.d stm32_flappy_uploader defaults`
