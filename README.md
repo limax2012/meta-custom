@@ -28,6 +28,7 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
   - Receive 4 bytes from STM32 via SPI
   - GPIO25 blink test and GPIO24 falling edge input test
   - Receive and ack GPIO signal from STM32
+  - Receive and upload data from [STM32 Flappy Bird](https://github.com/limax2012/flappy-bird)
 - Set root filesystem partition size to ~200 MiB
 - Set root password to `toor`
 
@@ -35,7 +36,7 @@ The `meta-custom` layer provides the following customizations for a minimal Rasp
 
 `/usr/bin/spi_logger` waits to receive score and temperature via SPI before uploading the data to Firebase.
 
-Setup for Wi-Fi/Firebase credentiald and startup script:
+Setup for Wi-Fi/Firebase credentials and startup script:
 1. Create `/etc/firebase.conf` with the following format:
 ```
 URL=https://flappy-bird-scores-default-rtdb.firebaseio.com/.json
